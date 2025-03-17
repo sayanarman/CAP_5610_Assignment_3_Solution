@@ -1,0 +1,169 @@
+\documentclass[12pt,letterpaper, onecolumn]{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{commath}
+\usepackage{physics}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{relsize}
+\usepackage{tikz}
+\usepackage[lmargin=71pt, tmargin=1.2in]{geometry}  %For centering solution box
+\usepackage{clrscode}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns}
+\graphicspath{ {./images/} }
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=1pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+%\lstset{style=mystyle}
+\lhead{CAP 5610 Assignment \#3 Solution\\}
+\rhead{Arman Sayan\\}
+% \chead{\hline} % Un-comment to draw line below header
+\thispagestyle{empty}   %For removing header/footer from page 1
+
+\begin{document}
+
+\begingroup  
+    \centering
+    \LARGE CAP 5610\\
+    \LARGE Assignment \#3 Solution\\[0.5em]
+    \large \today\\[0.5em]
+    \large Arman Sayan\par
+\endgroup
+\rule{\textwidth}{0.4pt}
+\bracketedpoints   %Self-explanatory
+\printanswers
+\renewcommand{\solutiontitle}{\noindent\textbf{Ans:}\enspace}   %Replace "Ans:" with starting keyword in solution box
+\qformat{\large \textbf{\thequestion \quad \thequestiontitle \quad [\thepoints] \hfill}}
+\renewcommand{\thepartno}{\arabic{partno}}
+\renewcommand{\partlabel}{\thepartno.}
+
+\begin{questions}
+    \titledquestion{Kernel Computation Cost}[30]
+    
+    \begin{parts}
+        \part[10]  Consider we have a two-dimensional input space such that the input vector is
+        $x = (x_1, x_2)^T$. Define the feature mapping $\phi(x) = (x_1^2, \sqrt{2}x_1x_2, x_2^2)^T$. What is the corresponding
+        kernel function, i.e., $K(x, z)$? Do not leave $\phi(x)$ in your final answer.
+
+        \begin{solution}
+
+        \end{solution}
+
+        \part[20] Suppose we want to compute the value of the kernel function $K(x, z)$ from the
+        previous question on two vectors $x, z \in \mathbb{R}^2$. How many additions and multiplications are
+        needed if you
+
+        \begin{subparts}
+            
+            \subpart[10] Map the input vector to the feature space and then perform the dot product
+            on the mapped features?
+
+            \begin{solution}
+                
+            \end{solution}
+
+            \subpart[10] Compute through the kernel function you derived in question 1?
+
+            \begin{solution}
+                
+            \end{solution}
+
+        \end{subparts}
+
+    \end{parts}
+
+    \pagebreak
+
+    \titledquestion{Activation Functions and Loss Functions}[30]
+
+    \begin{parts}
+
+        \part[20] For this assignment, you are encouraged to consult Dr. GOOGLE and Dr. ChatGPT. But please explain
+        things in your own language while you write the answer. For each of the following activation functions,
+        briefly describe the type of non-linearity (if any) it introduces and discuss their pros and cons.
+
+        \begin{enumerate}[label=(\alph*)]
+            \item Linear Activation Function
+            \item Sigmoid Activation Function
+            \item Tanh Activation Function
+            \item ReLU (Rectified Linear Unit) Activation Function
+        \end{enumerate}
+
+        \begin{solution}
+
+        \end{solution}
+
+        \pagebreak
+
+        \part[10] For each of the following loss functions, briefly describe their mathematical formula and discuss for which type of
+        learning task (classification, regression, etc.) they are most appropriate.
+
+        \begin{enumerate}[label=(\alph*)]
+            \item Mean Squared Error Loss
+            \item Binary Cross Entropy Loss
+            \item Hinge Loss
+            \item Softmax Cross Entropy Loss
+        \end{enumerate}
+
+        \begin{solution}
+
+        \end{solution}
+        
+    \end{parts}
+
+    \pagebreak
+
+    \titledquestion{Linear SVM Implementation}[40]
+
+    Solution for Q3:
+
+    \begin{solution}
+
+        Please check the source code and outputs included in the appendix named as
+
+        \begin{center}
+            \textbf{CAP\_5610\_Assignment\_3\_Solution\_Arman\_Sayan.ipynb}
+        \end{center}
+        
+        for the solution.
+    \end{solution}
+
+    \pagebreak
+    
+\end{questions}
+
+%\begin{appendix}
+%    \centering
+%    \begin{flushleft}  
+%      \section{Appendix}
+%      \includepdf[pages=-]{CAP_5610_Assignment_3_Solution_Arman_Sayan_1.pdf}
+%    \end{flushleft}
+%\end{appendix}
+
+\end{document}
