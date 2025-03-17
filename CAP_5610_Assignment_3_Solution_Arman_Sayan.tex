@@ -73,6 +73,45 @@
 
         \begin{solution}
 
+            To find the kernel function $K(x, z)$, we use the definition of the kernel function as follows:
+
+            \begin{equation*}
+                K(x, z) = \phi(x)^T \phi(z)
+            \end{equation*}
+
+            where $\phi(x)$ represents feature mapping.
+
+            Given that $\phi(x) = (x_1^2, \sqrt{2}x_1x_2, x_2^2)^T$, for another input vector $z = (z_1, z_2)^T$,
+            the feature mapping is $\phi(z) = (z_1^2, \sqrt{2}z_1z_2, z_2^2)^T$.
+
+            Now, we can compute the dot product of the feature mappings as follows:
+
+            \begin{align*}
+                K(x, z) &= \phi(x)^T \phi(z)\\ 
+                &= \begin{bmatrix}
+                    x_1^2 & \sqrt{2}x_1x_2 & x_2^2
+                \end{bmatrix}
+                \begin{bmatrix}
+                    z_1^2\\
+                    \sqrt{2}z_1z_2\\
+                    z_2^2
+                \end{bmatrix}\\
+                &= x_1^2z_1^2 + 2x_1x_2z_1z_2 + x_2^2z_2^2\\
+            \end{align*}
+
+            With a deduction from the above calculations, we can observe the final expression as
+
+            \begin{center}
+                $K(x, z) = (x_1z_1 + x_2z_2)^2$
+            \end{center}
+
+            Since $x_1z_1 + x_2z_2$ is the dot product of the input vectors $x$ and $z$, namely $x^Tz$, 
+            the corresponding kernel function is 
+
+            \begin{center}
+                \fbox{$\displaystyle{\boldsymbol{K(x, z) = (x^Tz)^2}}$}
+            \end{center}
+
         \end{solution}
 
         \part[20] Suppose we want to compute the value of the kernel function $K(x, z)$ from the
