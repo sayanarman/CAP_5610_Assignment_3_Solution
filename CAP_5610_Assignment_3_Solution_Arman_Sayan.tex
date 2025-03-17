@@ -124,12 +124,70 @@
             on the mapped features?
 
             \begin{solution}
+
+                Using the feature mappings 
                 
+                \begin{center}
+                    $\phi(x) = (x_1^2, \sqrt{2}x_1x_2, x_2^2)^T$ and $\phi(z) = (z_1^2, \sqrt{2}z_1z_2, z_2^2)^T$,
+                \end{center}
+                
+                the kernel function $K(x, z)$ can be computed as
+
+                \begin{align*}
+                    K(x, z) &= \phi(x)^T \phi(z)\\ 
+                    &= \begin{bmatrix}
+                        x_1^2 & \sqrt{2}x_1x_2 & x_2^2
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        z_1^2\\
+                        \sqrt{2}z_1z_2\\
+                        z_2^2
+                    \end{bmatrix}\\
+                    &= x_1^2z_1^2 + 2x_1x_2z_1z_2 + x_2^2z_2^2\\
+                \end{align*}
+
+                For the feature mapping of the vector $x$, we need to compute terms $x_1^2$, $x_2^2$, and $\sqrt{2}x_1x_2$.
+                To calculate these terms, we need 3 multiplications.
+
+                Since we have 2 input vectors $x$ and $z$, we need to perform 3 multiplications for each vector, which results in 6 multiplications
+                for mapping the vectors to the feature space.
+
+                After mapping the vectors to the feature space, we need to compute the dot product of the feature mappings as
+
+                \begin{center}
+                    $K(x, z) = x_1^2z_1^2 + 2x_1x_2z_1z_2 + x_2^2z_2^2$
+                \end{center}
+
+                This requires 3 multiplications for each term in the summation and 2 additions to sum three terms. 
+                
+                In total, we need \fbox{\textbf{9 multiplications and 2 additions}} to compute the value of $K(x, z)$.
+
             \end{solution}
+
+            \pagebreak
 
             \subpart[10] Compute through the kernel function you derived in question 1?
 
             \begin{solution}
+
+                The kernel function derived in question 1 is $K(x, z) = (x^Tz)^2$.
+
+                To compute the value of the kernel function $K(x, z)$ using this kernel function, we need to calculate the dot product of the input vectors $x$ and $z$,
+                namely $x^Tz$.
+
+                The dot product of two vectors $x$ and $z$ is calculated as
+
+                \begin{center}
+                    $x^Tz = x_1z_1 + x_2z_2$
+                \end{center}
+
+                This requires 2 multiplications for terms $x_1z_1$ and $x_2z_2$ and 1 addition to sum those terms.
+
+                After computing the dot product, we need to square the result to obtain the value of the kernel function $K(x, z)$.
+
+                Squaring the result requires 1 multiplication.
+
+                In total, we need \fbox{\textbf{3 multiplications and 1 addition}} to compute the value of $K(x, z)$.
                 
             \end{solution}
 
