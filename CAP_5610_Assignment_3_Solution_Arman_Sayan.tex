@@ -302,6 +302,69 @@
 
         \begin{solution}
 
+            \begin{enumerate}[label=(\alph*)]
+                \item \textbf{Mean Squared Error Loss:}
+                
+                Mean Squared Error (MSE) loss is a regression loss function that measures the average squared difference between the predicted values $\hat{y_i}$ and actual values $y_i$.
+                
+                \begin{center}
+                    MSE $\displaystyle{= \dfrac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2}$
+                \end{center}
+
+                where $N$ is the number of samples in the dataset, $y_i$ is the actual target value, and $\hat{y}_i$ is the predicted value.
+
+                The squaring ensures that large errors are penalized more heavily than small errors.
+
+                It is most appropriate for regression tasks where the model is required to predict continuous values.
+                
+                \item \textbf{Binary Cross Entropy Loss:}
+                
+                Binary Cross Entropy loss is a classification loss function that measures the difference between the predicted probability $\hat{y}_i$ and actual class labels for binary classification tasks.
+                
+                \begin{center}
+                    BCE $\displaystyle{= -\dfrac{1}{N} \sum_{i=1}^{N} [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)]}$
+                \end{center}
+
+                where $N$ is the number of samples in the dataset, $y_i$ is the actual class label such as 0 or 1, and $\hat{y}_i$ is the predicted probability between 0 and 1.
+
+                The logarithm makes wrong confident predictions highly penalized.
+
+                It is most appropriate for binary classification tasks where the model is required to predict probabilities for two classes. 
+                
+                \item \textbf{Hinge Loss:}
+                
+                Hinge loss is a classification loss function that measures the margin of the predicted class label $\hat{y}_i$ from the decision boundary for binary classification tasks.
+                
+                \begin{center}
+                    Hinge Loss $\displaystyle{= \dfrac{1}{N} \sum_{i=1}^{N} \max(0, 1 - y_i \hat{y}_i)}$
+                \end{center}
+
+                where $N$ is the number of samples in the dataset, $y_i$ is the actual class label such as -1 or 1, and $\hat{y}_i$ is the predicted class label.
+
+                If the true label $y_i$ and predicted label $\hat{y}_i$ have the same sign and a large margin greater than 1, the loss is 0.
+                If that is not the case, it penalizes the prediction proportionally, encouraging a large decision margin between different classes.
+
+                It is most appropriate for binary classification tasks where the model is required to predict class labels, like in SVMs.
+                
+                \item \textbf{Softmax Cross Entropy Loss:}
+                
+                Softmax Cross Entropy loss is a classification loss function that measures the difference between the predicted and actual class labels for multi-class classification
+                tasks.
+
+                \begin{center}
+                    Softmax Cross Entropy $\displaystyle{= -\dfrac{1}{N} \sum_{i=1}^{N} \sum_{c=1}^{C} y_{i,c} \log(\frac{e^{\hat{y}_{i,c}}}{\sum_{k=1}^{C}{e^{\hat{y}_{i,k}}}})}$
+                \end{center}
+
+                where $N$ is the number of samples in the dataset, $C$ is the number of classes, $y_{i,c}$ is 1 if the true class is $c$ and 0 otherwise, and $\hat{y}_{i,c}$ is the raw predicted probability for class $c$
+                before applying softmax.
+
+                The softmax function converts raw model outputs into probabilities, and encourages high confidence in the correct class while penalizing incorrect ones.
+                The cross-entropy term compares the predicted probability of the correct class to true label.
+
+                It is most appropriate for multi-class classification tasks where each sample belongs to one of many classes and the model is required to predict probabilities for multiple classes.
+
+            \end{enumerate}
+
         \end{solution}
         
     \end{parts}
