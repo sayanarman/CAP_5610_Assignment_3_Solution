@@ -214,6 +214,78 @@
 
         \begin{solution}
 
+            \begin{enumerate}[label=(\alph*)]
+                \item \textbf{Linear Activation Function:}
+                
+                \begin{center}
+                    $f(x) = x$
+                \end{center}
+
+                Linear activation function introduces a linear relationship between the 
+                input and output where the output is directly proportional to the input. 
+                It is a simple activation function that does not introduce any 
+                non-linearity to the model.
+
+                It is simple and computationally efficient, making it useful for regression
+                problems. However, it does not introduce any non-linearity, meaning it cannot 
+                capture complex relationships in data, and stacking multiple linear layers does
+                not increase the model’s learning capacity.
+                
+                \item \textbf{Sigmoid Activation Function:}
+                
+                \begin{center}
+                    $f(x) = \dfrac{1}{1 + e^{-x}}$
+                \end{center}
+
+                Sigmoid activation function introduces a non-linearity that squashes the
+                input values between 0 and 1 in a S-shaped curve. 
+                
+                It is useful for binary classification problems where the output is required
+                to be in the range of 0 and 1. Furthermore, it provides a smooth gradient that
+                helps in training the model. However, it suffers from the vanishing gradient
+                problem, which makes training deep neural networks difficult. Also, it is not
+                zero-centered, namely the output is always positive, which can lead to 
+                convergence issues.
+
+                \pagebreak
+                
+                \item \textbf{Tanh Activation Function:}
+                
+                \begin{center}
+                    $f(x) = \dfrac{e^x - e^{-x}}{e^x + e^{-x}}$
+                \end{center}
+
+                Tanh activation function introduces a non-linearity that squashes the input
+                values in a S-shaped curve, similar to sigmoid activation function, but output values 
+                between -1 and 1.
+
+                It is zero-centered, which helps in faster convergence during training.
+                Also, it provides stronger gradients for hidden layers compared to sigmoid activation function.
+                However, just like sigmoid activation function, it also suffers from the 
+                vanishing gradient problem, making it difficult to train deep neural networks. 
+                Furthermore, it is not suitable for sparse data. Lastly, it is computationally
+                expensive due to the exponential operations.
+                
+                \item \textbf{ReLU (Rectified Linear Unit) Activation Function:}
+                
+                \begin{center}
+                    $f(x) = \max(0, x)$
+                \end{center}
+
+                ReLU activation function introduces a non-linearity that outputs the input
+                as it is if it is positive, and zero otherwise, making computations simple.
+                
+                It is computationally efficient and helps in faster convergence during training
+                compared to sigmoid and tanh. Also, it does not suffer from the vanishing gradient
+                problem, making it suitable for training deep neural networks. Lastly, it remains 
+                one of the most widely used activation functions due to its strong performance 
+                in deep networks. However, it suffers from the dying ReLU problem where neurons 
+                can die during training and stop learning when inputs become negative and ReLU 
+                outputs 0. Also, it is not zero-centered, which can lead to convergence issues.
+                Lastly, it is not suitable for small input values as it ignores negative information.
+                
+            \end{enumerate}
+
         \end{solution}
 
         \pagebreak
